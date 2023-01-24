@@ -41,9 +41,12 @@ INSTALLED_APPS = [
 
     # 3rd party apps
     'rest_framework',
+    'dj_rest_auth',
+    'rest_framework.authtoken',
 
     # My apps
     'personnel',
+    'users',
 
 ]
 
@@ -107,6 +110,13 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+REST_AUTH_SERIALIZERS = {
+    'TOKEN_SERIALIZER': 'users.serializers.CustomTokenSerializer',
+}
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': ['rest_framework.authentication.TokenAuthentication',]
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/

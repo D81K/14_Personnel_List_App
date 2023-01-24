@@ -16,7 +16,7 @@ class Personnel(models.Model):
 
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
-    is_staffed = models.BooleanField(default=False)
+    is_staff = models.BooleanField(default=False)
     title = models.CharField(max_length=30, blank=False)
     GENDER = (
         ('m', 'Male'),
