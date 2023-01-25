@@ -79,4 +79,6 @@ class UserSerializer(serializers.ModelSerializer):
 
 
 class CustomTokenSerializer(TokenSerializer):
-    # Ask token to Rafe
+    user = RegisterSerializer(read_only=True)
+    class Meta(TokenSerializer.Meta):
+        fields = ('key', 'user')
